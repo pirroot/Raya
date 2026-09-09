@@ -1,0 +1,28 @@
+from django.urls import include, path
+
+urlpatterns = [
+    path("", include("apps.users.urls")),
+    path("rbac/", include("apps.rbac.urls")),
+    path("education/", include("apps.education.urls")),
+    path("user/coins/", include("apps.coins.urls")),
+    path("user/wallet/", include("apps.wallet.urls")),
+    path("banners/", include("apps.banners.urls")),
+    path("storage/", include("apps.storage.urls")),
+    path("", include("apps.ai.urls")),
+    path("", include("apps.banners.urls")),
+    path("", include("apps.suggestions.urls")),
+    path("", include("apps.qna.urls")),
+    path("", include("apps.competitions.urls")),
+    path("", include("apps.announcements.urls")),
+    path("", include("apps.contact.urls")),
+    path("", include("apps.gifts.urls")),
+    path("", include("apps.schedule.urls")),
+    path("", include("apps.polls.urls")),
+    path("", include("apps.psychology_tests.urls")),
+    path("", include("apps.question_bank.urls")),
+    path("", include("apps.payment.urls")),
+    path("", include("apps.certificates.urls")),
+    path("market/", include("apps.market.urls")),
+    path("chat/", include("apps.chat.urls")),
+    path("notifications/", include("apps.notifications.urls")),
+]

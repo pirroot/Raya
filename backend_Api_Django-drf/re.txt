@@ -1,0 +1,7 @@
+
+برای محیط توسعه (Development):
+bash
+pip install -r requirements/dev.txt
+برای محیط تولید (Production):
+bash
+pip install -r requirements/base.txt

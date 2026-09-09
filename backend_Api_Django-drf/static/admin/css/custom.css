@@ -1,0 +1,331 @@
+/*
+  static/admin/css/custom.css
+  ----------------------------------------------------
+  Hoshyar Admin — iOS-inspired modern theme for django-unfold
+  ---------------------------------------------------- */
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../ravi/RaviFaNum-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../ravi/RaviFaNum-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../ravi/RaviFaNum-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../ravi/RaviFaNum-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================
+   فونت سراسری — با specificity hack تا مطمئن روی هر چیزی از
+   باندل Tailwind یونفولد (حتی اگه اونم !important داشته باشه) وین بشه.
+   :not(#_) هیچ اثری روی matching نداره، فقط specificity رو بدون
+   محدود کردن به کلاس خاصی از یونفولد بالا میبره.
+   ============================================================ */
+html:not(#_):not(#_):not(#_) body,
+html:not(#_):not(#_):not(#_) *:not(svg):not(svg *) {
+  font-family:
+    'Vazirmatn',
+    'Inter',
+    -apple-system,
+    system-ui,
+    sans-serif !important;
+}
+
+:root {
+  --font-sans: 'Vazirmatn', 'Inter', -apple-system, system-ui, sans-serif;
+}
+
+/* اعداد/تاریخ لاتین و خواناتر */
+.tabular-nums,
+time,
+input[type='number'],
+input[type='date'],
+input[type='time'] {
+  font-feature-settings: 'tnum' 1;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+html:not(#_):not(#_) body {
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   پچ‌های RTL
+   ============================================================ */
+html[dir='rtl'] body,
+html[lang='fa'] body {
+  direction: rtl;
+  text-align: right;
+}
+html[dir='rtl'] table th,
+html[dir='rtl'] table td {
+  text-align: right;
+}
+html[dir='rtl'] [class*='ml-'] {
+  margin-right: var(--tw-margin-left, 0);
+  margin-left: 0 !important;
+}
+html[dir='rtl'] [class*='mr-'] {
+  margin-left: var(--tw-margin-right, 0);
+  margin-right: 0 !important;
+}
+html[dir='rtl'] svg[class*='chevron-right'],
+html[dir='rtl'] svg[class*='arrow-right'],
+html[dir='rtl'] svg[class*='chevron-left'],
+html[dir='rtl'] svg[class*='arrow-left'] {
+  transform: scaleX(-1);
+}
+
+/* ============================================================
+   iOS DESIGN TOKENS
+   ============================================================ */
+:root {
+  --ios-radius-sm: 10px;
+  --ios-radius-md: 16px;
+  --ios-radius-lg: 22px;
+  --ios-radius-pill: 999px;
+
+  --ios-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.06);
+  --ios-shadow-md: 0 4px 14px rgba(15, 23, 42, 0.08), 0 2px 4px rgba(15, 23, 42, 0.04);
+  --ios-shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.12), 0 4px 8px rgba(15, 23, 42, 0.06);
+
+  --ios-blue: 37 99 235;
+  --ios-blue-soft: 239 246 255;
+  --ios-green: 16 185 129;
+  --ios-red: 239 68 68;
+  --ios-amber: 245 158 11;
+
+  --ios-glass-bg: rgba(255, 255, 255, 0.72);
+  --ios-glass-border: rgba(255, 255, 255, 0.5);
+}
+
+html.dark {
+  --ios-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --ios-shadow-md: 0 4px 14px rgba(0, 0, 0, 0.35);
+  --ios-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.45);
+  --ios-glass-bg: rgba(24, 24, 27, 0.6);
+  --ios-glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* پس‌زمینه‌ی کلی صفحه یه گرادینت خیلی ملایم */
+body {
+  background:
+    radial-gradient(circle at 15% 0%, rgb(var(--ios-blue) / 0.05), transparent 40%),
+    radial-gradient(circle at 85% 100%, rgb(var(--ios-green) / 0.04), transparent 40%);
+}
+
+/* ============================================================
+   هدر بالای صفحه (topbar) — شیشه‌ای و sticky
+   ============================================================ */
+[class*='sticky'][class*='top-0'] {
+  background: var(--ios-glass-bg) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--ios-glass-border) !important;
+}
+
+/* ============================================================
+   سایدبار
+   ============================================================ */
+aside,
+[class*='sidebar'] {
+  background: var(--ios-glass-bg) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-inline-end: 1px solid var(--ios-glass-border) !important;
+}
+
+/* آیتم فعال سایدبار: پس‌زمینه‌ی gradient نرم + گوشه‌ی گرد کامل */
+aside a[class*='bg-'],
+[class*='sidebar'] a[class*='bg-primary'],
+[class*='sidebar'] [aria-current='page'] {
+  border-radius: var(--ios-radius-md) !important;
+  background: linear-gradient(
+    135deg,
+    rgb(var(--ios-blue) / 0.12),
+    rgb(var(--ios-blue) / 0.06)
+  ) !important;
+  box-shadow: inset 0 0 0 1px rgb(var(--ios-blue) / 0.15);
+}
+
+aside a,
+[class*='sidebar'] a {
+  border-radius: var(--ios-radius-md) !important;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
+}
+aside a:hover,
+[class*='sidebar'] a:hover {
+  transform: translateX(-2px);
+}
+html[dir='rtl'] aside a:hover,
+html[dir='rtl'] [class*='sidebar'] a:hover {
+  transform: translateX(2px);
+}
+
+/* ============================================================
+   کارت‌ها / ماژول‌ها / پنل‌ها
+   ============================================================ */
+[class*='rounded'] {
+  border-radius: var(--ios-radius-md) !important;
+}
+
+.card,
+[class*='card'],
+form [class*='bg-white'],
+[class*='dark:bg-base-800'],
+fieldset {
+  border-radius: var(--ios-radius-lg) !important;
+  box-shadow: var(--ios-shadow-sm) !important;
+  border: 1px solid rgb(0 0 0 / 0.04) !important;
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+html.dark .card,
+html.dark [class*='card'],
+html.dark fieldset {
+  border: 1px solid rgb(255 255 255 / 0.06) !important;
+}
+
+/* ============================================================
+   دکمه‌ها — قرصی، gradient، springy
+   ============================================================ */
+button,
+[type='submit'],
+[type='button'],
+a[class*='button'],
+.submit-row input {
+  border-radius: var(--ios-radius-pill) !important;
+  font-weight: 600 !important;
+  transition:
+    transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+button:hover,
+[type='submit']:hover,
+a[class*='button']:hover {
+  transform: translateY(-1px) scale(1.02);
+  filter: brightness(1.05);
+}
+button:active,
+[type='submit']:active,
+a[class*='button']:active {
+  transform: scale(0.97);
+}
+
+button[class*='bg-primary'],
+[type='submit'][class*='bg-primary'],
+.default {
+  background: linear-gradient(135deg, rgb(var(--ios-blue)), rgb(var(--ios-blue) / 0.85)) !important;
+  box-shadow: 0 4px 14px rgb(var(--ios-blue) / 0.35) !important;
+}
+
+/* ============================================================
+   ورودی‌های فرم — گرد، فوکوس با حلقه‌ی رنگی نرم
+   ============================================================ */
+input:not([type='checkbox']):not([type='radio']),
+select,
+textarea {
+  border-radius: var(--ios-radius-sm) !important;
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+input:not([type='checkbox']):not([type='radio']):focus,
+select:focus,
+textarea:focus {
+  box-shadow: 0 0 0 4px rgb(var(--ios-blue) / 0.15) !important;
+  border-color: rgb(var(--ios-blue)) !important;
+  outline: none !important;
+}
+
+/* چک‌باکس‌ها به سبک iOS toggle (در حد امکان با CSS خالص) */
+input[type='checkbox'] {
+  accent-color: rgb(var(--ios-blue));
+}
+
+/* ============================================================
+   جدول‌ها — تمیز، بدون خط زیاد، هاور نرم
+   ============================================================ */
+table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+table tbody tr {
+  transition: background-color 0.15s ease;
+}
+table tbody tr:hover {
+  background: rgb(var(--ios-blue) / 0.04) !important;
+}
+table thead th {
+  font-weight: 600 !important;
+  letter-spacing: 0.01em;
+}
+
+/* ============================================================
+   بج‌ها / وضعیت‌ها — pill رنگی نرم
+   ============================================================ */
+[class*='badge'] {
+  border-radius: var(--ios-radius-pill) !important;
+  font-weight: 600 !important;
+  padding-inline: 10px !important;
+}
+
+/* ============================================================
+   اسکرول‌بار
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--ios-blue) / 0.35);
+  border-radius: var(--ios-radius-pill);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--ios-blue) / 0.55);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ============================================================
+   انیمیشن ورود ملایم برای صفحه‌ها
+   ============================================================ */
+main,
+[class*='content'] {
+  animation: ios-fade-in 0.35s ease both;
+}
+@keyframes ios-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
