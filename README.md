@@ -5,46 +5,45 @@
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Raya App** یک پلتفرم یادگیری زبان مدرن و تعاملی است که با استفاده از **Next.js 15** و **Changwoo UI** طراحی شده است. این برنامه به کاربران امکان می‌دهد تا مهارت‌های زبانی خود را از طریق دوره‌های ساختاریافته، تمرین‌های تعاملی و پنل مدیریت پیشرفته بهبود بخشند.
+**Raya App** is a modern and interactive language learning platform built with **Next.js 15** and **Changwoo UI**. This application enables users to improve their language skills through structured courses, interactive exercises, and an advanced admin panel.
 
 ![Raya App Dashboard](https://via.placeholder.com/1200x600/1a202c/ffffff?text=Raya+App+Dashboard)
 
-## ✨ ویژگی‌های کلیدی
+## ✨ Key Features
 
-- 🎯 **دوره‌های تعاملی**: دسترسی به دوره‌های زبان با سطوح مختلف (مبتدی تا پیشرفته)
-- 🧩 **تمرین‌های هوشمند**: سوالات چندگزینه‌ای، پرکردن جای خالی و تمرینات شنیداری
-- 📊 **پنل مدیریت**: کنترل کامل بر محتوا، کاربران و پیشرفت دوره‌ها
-- 📱 **طراحی واکنش‌گرا**: تجربه کاربری عالی در تمام دستگاه‌ها (موبایل، تبلت، دسکتاپ)
-- 🌙 **حالت تاریک/روشن**: پشتیبانی از تم‌های مختلف با استفاده از TailwindCSS
-- 🚀 **عملکرد بهینه**: استفاده از قابلیت‌های SSR و ISR برای سرعت بالا
-- 🔐 **احراز هویت امن**: ورود و ثبت‌نام با پشتیبانی از JWT و OAuth
+- 🎯 **Interactive Courses**: Access to language courses at various levels (beginner to advanced)
+- 🧩 **Smart Exercises**: Multiple-choice questions, fill-in-the-blanks, and listening exercises
+- 📊 **Admin Panel**: Full control over content, users, and course progress
+- 📱 **Responsive Design**: Excellent user experience across all devices (mobile, tablet, desktop)
+- 🌙 **Dark/Light Mode**: Support for different themes using TailwindCSS
+- 🚀 **Optimized Performance**: Utilizing SSR and ISR capabilities for high speed
+- 🔐 **Secure Authentication**: Login and registration with JWT and OAuth support
 
-## 🛠️ تکنولوژی‌های استفاده شده
+## 🛠️ Technologies Used
 
-- **[Next.js 15](https://nextjs.org/)** - فریم‌ورک React برای رندرینگ سمت سرور و تولید وب‌سایت‌های ایستا
-- **[Changwoo UI](https://changwoo.ir/)** - کتابخانه کامپوننت‌های سفارشی و زیبا
-- **[TypeScript](https://www.typescriptlang.org/)** - زبان برنامه‌نویسی نوع‌دار برای توسعه امن‌تر
-- **[TailwindCSS](https://tailwindcss.com/)** - فریم‌ورک طراحی برای استایل‌دهی سریع
-- **[Prisma](https://www.prisma.io/)** - ORM مدرن برای ارتباط با دیتابیس
-- **[NextAuth.js](https://next-auth.js.org/)** - احراز هویت کامل برای Next.js
-- **[SWR](https://swr.vercel.app/)** - کتابخانه مدیریت داده‌های سمت کلاینت
+- **[Next.js 15](https://nextjs.org/)** - React framework for server-side rendering and static site generation
+- **[Changwoo UI](https://changwoo.ir/)** - Custom and beautiful component library
+- **[TypeScript](https://www.typescriptlang.org/)** - Typed programming language for safer development
+- **[TailwindCSS](https://tailwindcss.com/)** - Design framework for rapid styling
+- **[Prisma](https://www.prisma.io/)** - Modern ORM for database connectivity
+- **[NextAuth.js](https://next-auth.js.org/)** - Complete authentication for Next.js
+- **[SWR](https://swr.vercel.app/)** - Client-side data management library
 
-## 📋 پیش‌نیازها
+## 📋 Prerequisites
 
-قبل از نصب و اجرای پروژه، مطمئن شوید که ابزارهای زیر روی سیستم شما نصب هستند:
+Before installing and running the project, make sure the following tools are installed on your system:
 
-- **Node.js** v18.0.0 یا بالاتر
-- **npm** v9.0.0 یا بالاتر / **yarn** v1.22.0 یا بالاتر / **pnpm** v8.0.0 یا بالاتر
-- **Git** برای کلون کردن مخزن
-- **PostgreSQL** (یا هر دیتابیس دیگری که Prisma از آن پشتیبانی می‌کند)
+- **Node.js** v18.0.0 or higher
+- **npm** v9.0.0 or higher / **yarn** v1.22.0 or higher / **pnpm** v8.0.0 or higher
+- **Git** for cloning the repository
+- **PostgreSQL** (or any other database supported by Prisma)
 
-## 🚀 نصب و راه‌اندازی
+## 🚀 Installation and Setup
 
-برای راه‌اندازی پروژه روی سیستم خود، مراحل زیر را دنبال کنید:
+To set up the project on your system, follow these steps:
 
-### 1. کلون کردن مخزن
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/raya-app.git
 cd raya-app
-```
